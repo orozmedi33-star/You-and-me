@@ -6,538 +6,501 @@
 
 <title>Артур & Айсулуу | Үйлөнүү тою</title>
 
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap');
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 
+<style>
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+  box-sizing:border-box;
 }
 
 html{
-    scroll-behavior:smooth;
+  scroll-behavior:smooth;
 }
 
 body{
-    background:#f8f5f1;
-    color:#333;
-    font-family:'Montserrat',sans-serif;
-    overflow-x:hidden;
+  margin:0;
+  background:#eee6da;
+  color:#5c5045;
+  font-family:Montserrat,sans-serif;
+  font-weight:300;
 }
 
-section{
-    padding:80px 20px;
-    text-align:center;
+.page{
+  max-width:620px;
+  margin:auto;
+  background:#fbf8f2;
+  min-height:100vh;
+  overflow:hidden;
 }
 
 .hero{
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    background:
-      linear-gradient(rgba(255,255,255,.55),rgba(255,255,255,.72)),
-      url("wedding1.jpg") center/cover;
-    position:relative;
+  min-height:100vh;
+  padding:55px 24px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+
+  background:
+  linear-gradient(
+    rgba(251,248,242,.78),
+    rgba(251,248,242,.88)
+  ),
+  url("photo1.jpg") center/cover;
 }
 
-.date{
-    font-family:'Cormorant Garamond',serif;
-    font-size:25px;
-    letter-spacing:7px;
-    color:#8b7867;
-    margin-bottom:25px;
+.frame{
+  width:100%;
+  border:1px solid #ad987f;
+  padding:55px 20px;
 }
 
-.save{
-    font-size:12px;
-    letter-spacing:4px;
-    text-transform:uppercase;
-    color:#817264;
-    margin-bottom:15px;
+.small{
+  font-size:10px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:#988673;
 }
 
-.names{
-    font-family:'Cormorant Garamond',serif;
-    font-size:70px;
-    font-weight:400;
-    color:#39332e;
+h1,h2{
+  font-family:"Cormorant Garamond",serif;
+  font-weight:500;
+}
+
+.hero h1{
+  font-size:58px;
+  line-height:.95;
+  margin:22px 0;
+  color:#584c41;
 }
 
 .amp{
-    font-size:45px;
-    font-style:italic;
-    color:#a58e78;
+  font-size:34px;
+  color:#a48b70;
 }
 
-.subtitle{
-    margin-top:25px;
-    font-size:13px;
-    letter-spacing:3px;
-    color:#74685e;
+.date{
+  font-size:12px;
+  letter-spacing:2px;
+  margin-top:25px;
 }
 
-.flower{
-    font-size:35px;
-    margin:30px 0;
+.scroll{
+  display:inline-block;
+  margin-top:40px;
+  padding:12px 20px;
+  border:1px solid #ad987f;
+  color:#6d5e50;
+  text-decoration:none;
+  font-size:10px;
+  letter-spacing:2px;
 }
 
-.open-btn{
-    margin-top:30px;
-    padding:14px 35px;
-    border:1px solid #a89480;
-    background:rgba(255,255,255,.65);
-    color:#65584d;
-    border-radius:30px;
-    font-family:'Montserrat',sans-serif;
-    letter-spacing:2px;
-    cursor:pointer;
-    transition:.4s;
+.section{
+  padding:65px 25px;
+  text-align:center;
 }
 
-.open-btn:hover{
-    background:#a89480;
-    color:white;
-}
-
-/* MAIN */
-
-.invitation{
-    max-width:850px;
-    margin:auto;
-}
-
-.small-title{
-    font-size:12px;
-    letter-spacing:4px;
-    color:#9a8877;
-    margin-bottom:20px;
-}
-
-h2{
-    font-family:'Cormorant Garamond',serif;
-    font-size:48px;
-    font-weight:400;
-    margin-bottom:25px;
-}
-
-.text{
-    max-width:650px;
-    margin:auto;
-    line-height:2;
-    font-size:15px;
-    color:#625b55;
+.section h2{
+  font-size:40px;
+  margin:10px 0 18px;
 }
 
 .divider{
-    width:70px;
-    height:1px;
-    background:#b9a998;
-    margin:30px auto;
+  width:55px;
+  height:1px;
+  background:#b9a28a;
+  margin:0 auto 22px;
 }
 
-/* DATE CARD */
-
-.date-card{
-    background:white;
-    max-width:600px;
-    margin:20px auto;
-    padding:45px 20px;
-    box-shadow:0 15px 45px rgba(80,60,40,.08);
+.section p{
+  font-size:13px;
+  line-height:1.9;
+  max-width:480px;
+  margin:auto;
 }
 
-.big-date{
-    font-family:'Cormorant Garamond',serif;
-    font-size:75px;
-    color:#8e7a68;
-}
-
-.month{
-    font-size:18px;
-    letter-spacing:7px;
-    margin-top:-5px;
-}
-
-.time{
-    margin-top:30px;
-    font-size:20px;
-    letter-spacing:3px;
-}
-
-/* LOCATION */
-
-.location{
-    background:#eee9e3;
-}
-
-.location-box{
-    max-width:650px;
-    margin:auto;
-}
-
-.place{
-    font-family:'Cormorant Garamond',serif;
-    font-size:38px;
-    margin:15px 0;
-}
-
-.map-btn{
-    display:inline-block;
-    margin-top:25px;
-    padding:14px 30px;
-    border:1px solid #a38f7c;
-    color:#65584d;
-    text-decoration:none;
-    border-radius:30px;
-    transition:.3s;
-}
-
-.map-btn:hover{
-    background:#a38f7c;
-    color:white;
-}
-
-/* PHOTOS */
-
-.photos{
-    max-width:1000px;
-    margin:auto;
-}
-
-.photo-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:18px;
-}
-
+/* СҮРӨТТӨР БИРДЕН БИРДЕН ЫЛДЫЙ */
 .photo{
-    width:100%;
-    aspect-ratio:1/1;
-    object-fit:cover;
-    display:block;
+  margin:0 16px 28px;
+  background:#eee6da;
 }
 
-.photo:nth-child(2){
-    margin-top:45px;
+.photo img{
+  width:100%;
+  display:block;
 }
 
-@media(max-width:650px){
-    .names{
-        font-size:54px;
-    }
-
-    .big-date{
-        font-size:62px;
-    }
-
-    .photo-grid{
-        grid-template-columns:1fr;
-    }
-
-    .photo:nth-child(2){
-        margin-top:0;
-    }
+.caption{
+  padding:17px 12px 22px;
+  text-align:center;
+  font-family:"Cormorant Garamond",serif;
+  font-size:25px;
+  color:#66584c;
 }
 
-/* PARENTS */
-
-.parents{
-    background:#f0ebe5;
+.wishes{
+  background:#f0e7dc;
+  padding:65px 25px;
+  text-align:center;
 }
 
-.parent-name{
-    font-family:'Cormorant Garamond',serif;
-    font-size:34px;
-    margin-top:15px;
+.wishes h2{
+  font-size:40px;
+  margin:10px 0 20px;
 }
 
-/* FINAL */
-
-.final{
-    min-height:80vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    background:
-      linear-gradient(rgba(255,255,255,.45),rgba(255,255,255,.75)),
-      url("wedding2.jpg") center/cover;
+.wishes p{
+  font-family:"Cormorant Garamond",serif;
+  font-size:27px;
+  line-height:1.4;
+  margin:auto;
+  max-width:480px;
 }
 
-.final-names{
-    font-family:'Cormorant Garamond',serif;
-    font-size:58px;
+.info{
+  margin-top:28px;
+  padding:24px 15px;
+  border-top:1px solid #d2c1ad;
+  border-bottom:1px solid #d2c1ad;
+  line-height:1.8;
+}
+
+.info strong{
+  display:block;
+  font-weight:500;
+}
+
+.map{
+  display:inline-block;
+  margin-top:22px;
+  padding:13px 23px;
+  border:1px solid #9d8974;
+  color:#66584c;
+  text-decoration:none;
+  font-size:10px;
+  letter-spacing:2px;
 }
 
 .music{
-    position:fixed;
-    right:18px;
-    bottom:18px;
-    width:52px;
-    height:52px;
-    border-radius:50%;
-    border:1px solid #a89480;
-    background:rgba(255,255,255,.9);
-    color:#806f5e;
-    font-size:20px;
-    cursor:pointer;
-    z-index:1000;
+  position:fixed;
+  right:15px;
+  bottom:15px;
+  z-index:50;
 }
 
-.note{
-    margin-top:30px;
-    font-size:12px;
-    letter-spacing:2px;
-    color:#756a61;
+.music button{
+  border:1px solid #9d8974;
+  background:rgba(251,248,242,.96);
+  color:#66584c;
+  border-radius:30px;
+  padding:12px 17px;
+  font-family:Montserrat,sans-serif;
+  font-size:10px;
+  letter-spacing:1px;
+}
+
+.footer{
+  text-align:center;
+  padding:45px 20px 75px;
+  font-family:"Cormorant Garamond",serif;
+  font-size:26px;
+}
+
+@media(max-width:430px){
+
+  .hero h1{
+    font-size:51px;
+  }
+
+  .section h2,
+  .wishes h2{
+    font-size:36px;
+  }
+
 }
 </style>
 </head>
 
 <body>
 
-<!-- МУЗЫКА -->
-<audio id="music" loop>
-    <source src="music.mp3" type="audio/mpeg">
-</audio>
+<div class="page">
 
-<button class="music" onclick="toggleMusic()">♫</button>
-
-
-<!-- БАШКЫ БЕТ -->
+<!-- БАШКЫ БӨЛҮК -->
 <section class="hero">
 
-    <div class="date">
-        14 ФЕВРАЛЬ
+  <div class="frame">
+
+    <div class="small">
+      Үйлөнүү тоюна чакыруу
     </div>
 
-    <div class="save">
-        БИЗДИН КҮНҮБҮЗ
-    </div>
-
-    <div class="names">
-        Артур
-        <span class="amp">&</span>
-        Айсулуу
-    </div>
-
-    <div class="flower">❦</div>
-
-    <div class="subtitle">
-        ҮЙЛӨНҮҮ ТОЮНА ЧАКЫРЫУУ
-    </div>
-
-    <button class="open-btn" onclick="openInvitation()">
-        ЧАКЫРУУНУ АЧУУ
-    </button>
-
-</section>
-
-
-<!-- ЧАКЫРЫУУ -->
-<section>
-    <div class="invitation">
-
-        <div class="small-title">
-            КЫММАТТУУ КОНАКТАРЫБЫЗ
-        </div>
-
-        <h2>
-            Сиздерди биздин<br>
-            кубанычтуу күнүбүзгө чакырабыз
-        </h2>
-
-        <div class="divider"></div>
-
-        <p class="text">
-            Жашообуздагы эң маанилүү жана бактылуу
-            күндөрдүн бирин сиздер менен бирге
-            өткөргүбүз келет.
-            <br><br>
-            Биздин сүйүүбүздүн жаңы барагын ачкан
-            бул өзгөчө күнүбүздүн күбөсү болуп,
-            кубанычыбызды бөлүшүп кетсеңиздер,
-            биз үчүн чоң сыймык болот.
-        </p>
-
-    </div>
-</section>
-
-
-<!-- ДАТА -->
-<section>
-    <div class="date-card">
-
-        <div class="small-title">
-            ТОЙ КҮНҮ
-        </div>
-
-        <div class="big-date">
-            14
-        </div>
-
-        <div class="month">
-            ФЕВРАЛЬ
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="time">
-            🕔 17:00
-        </div>
-
-    </div>
-</section>
-
-
-<!-- СҮРӨТТӨР -->
-<section>
-    <div class="photos">
-
-        <div class="small-title">
-            БИЗДИН БАЯН
-        </div>
-
-        <h2>
-            Сүйүү менен...
-        </h2>
-
-        <div class="photo-grid">
-
-            <img src="wedding1.jpg"
-                 class="photo"
-                 alt="Артур жана Айсулуу">
-
-            <img src="wedding2.jpg"
-                 class="photo"
-                 alt="Артур жана Айсулуу">
-
-        </div>
-
-    </div>
-</section>
-
-
-<!-- ЖЕР -->
-<section class="location">
-
-    <div class="location-box">
-
-        <div class="small-title">
-            ТОЙДУН ӨТӨӨР ЖЕРИ
-        </div>
-
-        <h2>
-            Биз сиздерди күтөбүз
-        </h2>
-
-        <div class="divider"></div>
-
-        <div class="place">
-            Ресторан «Каргат»
-        </div>
-
-        <p class="text">
-            Бишкек шаары
-            <br>
-            14-февраль, саат 17:00
-        </p>
-
-        <a class="map-btn"
-           href="https://www.google.com/maps/search/?api=1&query=Ресторан+Каргат+Бишкек"
-           target="_blank">
-            📍 ЛОКАЦИЯНЫ АЧУУ
-        </a>
-
-    </div>
-
-</section>
-
-
-<!-- АТА-ЭНЕ -->
-<section class="parents">
-
-    <div class="small-title">
-        АТА-ЭНЕБИЗ
-    </div>
-
-    <h2>
-        Урматтуу ата-энебиздин
-        батасы менен
-    </h2>
+    <h1>
+      Артур
+      <span class="amp">&amp;</span>
+      Айсулуу
+    </h1>
 
     <div class="divider"></div>
 
-    <div class="parent-name">
-        Гульнара & Айдар
+    <div class="date">
+      14 ФЕВРАЛЬ 2026 · 17:00
     </div>
 
-    <p class="note">
-        Сиздерди биздин кубанычыбызды
-        бөлүшүүгө чакырабыз
-    </p>
+    <a class="scroll" href="#invitation">
+      ЧАКЫРУУНУ ОКУУ
+    </a>
+
+  </div>
 
 </section>
 
 
-<!-- АКЫРКЫ БЕТ -->
-<section class="final">
+<!-- ЧАКЫРУУ -->
+<section class="section" id="invitation">
 
-    <div class="small-title">
-        БИЗ СИЗДЕРДИ КҮТӨБҮЗ
-    </div>
+  <div class="small">
+    Биздин өзгөчө күнүбүз
+  </div>
 
-    <div class="final-names">
-        Артур & Айсулуу
-    </div>
+  <h2>
+    Сизди күтөбүз
+  </h2>
 
-    <div class="flower">
-        ♡
-    </div>
+  <div class="divider"></div>
 
-    <p class="text">
-        Келип, ак тилегиңиздерди айтып,
-        кубанычыбызга күбө болуп кетсеңиздер,
-        биз үчүн эң чоң белек болот.
-    </p>
+  <p>
+    Жүрөгүбүзгө жакын адамдар менен бул өзгөчө
+    күндү бирге өткөрүп, кубанычыбызды бөлүшкүбүз
+    келет. Сиздин катышууңуз биздин майрамыбызды
+    дагы да өзгөчө кылат.
+  </p>
 
 </section>
+
+
+<!-- 1-СҮРӨТ -->
+<div class="photo">
+
+  <img src="photo1.jpg">
+
+  <div class="caption">
+    Эки жүрөк — бир жол.
+  </div>
+
+</div>
+
+
+<!-- 2-СҮРӨТ -->
+<div class="photo">
+
+  <img src="photo2.jpg">
+
+  <div class="caption">
+    Бактылуу көз ирмемдер.
+  </div>
+
+</div>
+
+
+<!-- 3-СҮРӨТ -->
+<div class="photo">
+
+  <img src="photo3.jpg">
+
+  <div class="caption">
+    Сүйүү ар бир көз ирмемде.
+  </div>
+
+</div>
+
+
+<!-- 4-СҮРӨТ -->
+<div class="photo">
+
+  <img src="photo4.jpg">
+
+  <div class="caption">
+    Бирге башталган жаңы барак.
+  </div>
+
+</div>
+
+
+<!-- 5-СҮРӨТ -->
+<div class="photo">
+
+  <img src="photo5.jpg">
+
+  <div class="caption">
+    Жүрөктө түбөлүк калчу күн.
+  </div>
+
+</div>
+
+
+<!-- 6-СҮРӨТ -->
+<div class="photo">
+
+  <img src="photo6.jpg">
+
+  <div class="caption">
+    Биздин майрам — сиз менен өзгөчө.
+  </div>
+
+</div>
+
+
+<!-- ТИЛЕК -->
+<section class="wishes">
+
+  <div class="small">
+    Ак тилек
+  </div>
+
+  <h2>
+    Сүйүү менен
+  </h2>
+
+  <div class="divider"></div>
+
+  <p>
+    «Ар бир таңыбыз жылуулукка,
+    ар бир күнүбүз кубанычка,
+    ал эми жүрөгүбүз сүйүүгө толсун».
+  </p>
+
+</section>
+
+
+<!-- МЕСТОПОЛОЖЕНИЕ -->
+<section class="section">
+
+  <div class="small">
+    Кайда жолугабыз?
+  </div>
+
+  <h2>
+    Майрамдын дареги
+  </h2>
+
+  <div class="divider"></div>
+
+  <div class="info">
+
+    <strong>
+      «Каргат» рестораны
+    </strong>
+
+    Бишкек шаары<br>
+
+    14-февраль 2026 · 17:00
+
+  </div>
+
+  <a
+    class="map"
+    href="https://www.google.com/maps/search/?api=1&query=Каргат+ресторан+Бишкек"
+    target="_blank"
+  >
+    📍 МЕСТОПОЛОЖЕНИЕ
+  </a>
+
+</section>
+
+
+<div class="footer">
+
+  Артур & Айсулуу
+
+  <br><br>
+
+  <span class="small">
+    Сүйүү · Үй-бүлө · Бакыт
+  </span>
+
+</div>
+
+</div>
+
+
+<!-- МУЗЫКА -->
+<div class="music">
+
+  <button id="musicBtn">
+    ♫ Музыка: OFF
+  </button>
+
+  <audio
+    id="music"
+    src="music.mp3"
+    preload="auto"
+  ></audio>
+
+</div>
 
 
 <script>
 
-let musicPlaying = false;
+const music =
+document.getElementById("music");
 
-function toggleMusic(){
+const button =
+document.getElementById("musicBtn");
 
-    const music = document.getElementById("music");
 
-    if(musicPlaying){
-        music.pause();
-        musicPlaying = false;
-    }else{
-        music.play();
-        musicPlaying = true;
+/* МУЗЫКА 58 СЕКУНДА ГАНА */
+
+music.addEventListener("timeupdate", function(){
+
+  if(music.currentTime >= 58){
+
+    music.pause();
+
+    music.currentTime = 0;
+
+    button.textContent =
+      "♫ Музыка: OFF";
+
+  }
+
+});
+
+
+button.addEventListener("click", async function(){
+
+  if(music.paused){
+
+    try{
+
+      music.currentTime = 0;
+
+      await music.play();
+
+      button.textContent =
+        "♫ Музыка: ON";
+
     }
-}
 
-function openInvitation(){
+    catch(error){
 
-    window.scrollTo({
-        top: window.innerHeight,
-        behavior: "smooth"
-    });
+      button.textContent =
+        "♫ Кайра бас";
 
-    const music = document.getElementById("music");
+    }
 
-    music.play().then(()=>{
-        musicPlaying = true;
-    }).catch(()=>{
-        // Телефондун браузери автоматтык музыка баштоого уруксат бербесе,
-        // төмөнкү ♫ баскычын басып баштатса болот.
-    });
-}
+  }else{
+
+    music.pause();
+
+    button.textContent =
+      "♫ Музыка: OFF";
+
+  }
+
+});
 
 </script>
 
