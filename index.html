@@ -6,13 +6,11 @@
 
 <title>Артур & Айсулуу | Үйлөнүү тою</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
-
 <style>
 *{
   box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
 
 html{
@@ -20,489 +18,666 @@ html{
 }
 
 body{
-  margin:0;
-  background:#eee6da;
-  color:#5c5045;
-  font-family:Montserrat,sans-serif;
-  font-weight:300;
+  font-family:Georgia,"Times New Roman",serif;
+  background:#f8f1e7;
+  color:#4b4037;
+  overflow-x:hidden;
 }
 
-.page{
-  max-width:620px;
-  margin:auto;
-  background:#fbf8f2;
+/* ГҮЛДӨР */
+
+.flower{
+  position:absolute;
+  color:#b89d72;
+  opacity:.55;
+  font-size:45px;
+  pointer-events:none;
+}
+
+.f1{top:35px;left:12px;transform:rotate(-25deg);}
+.f2{top:90px;right:8px;transform:rotate(25deg);}
+.f3{bottom:40px;left:10px;transform:rotate(20deg);}
+.f4{bottom:30px;right:15px;transform:rotate(-20deg);}
+
+.leaf{
+  position:absolute;
+  width:70px;
+  height:25px;
+  border:1px solid #b9a184;
+  border-radius:100%;
+  opacity:.5;
+}
+
+/* БАШКЫ КОНВЕРТ */
+
+.opening{
   min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  background:
+    radial-gradient(circle at 20% 20%,rgba(210,190,160,.22),transparent 25%),
+    radial-gradient(circle at 80% 80%,rgba(210,190,160,.18),transparent 28%),
+    #f8f1e7;
   overflow:hidden;
+}
+
+.envelope-wrap{
+  width:330px;
+  max-width:88%;
+  text-align:center;
+  position:relative;
+}
+
+.small-title{
+  letter-spacing:4px;
+  font-size:12px;
+  color:#9b856b;
+  margin-bottom:22px;
+}
+
+.envelope{
+  height:220px;
+  position:relative;
+  background:#eee0ca;
+  border:1px solid #cbb899;
+  box-shadow:0 20px 50px rgba(80,60,40,.18);
+  border-radius:4px;
+  cursor:pointer;
+  transition:1s;
+}
+
+.envelope:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(145deg,transparent 49%,#ddc9a9 50%,transparent 51%),
+    linear-gradient(35deg,transparent 49%,#ddc9a9 50%,transparent 51%);
+  opacity:.8;
+}
+
+.flap{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:125px;
+  background:#e7d5b8;
+  clip-path:polygon(0 0,100% 0,50% 100%);
+  transform-origin:top;
+  transition:1.2s;
+  z-index:5;
+}
+
+.seal{
+  position:absolute;
+  z-index:7;
+  top:92px;
+  left:50%;
+  transform:translateX(-50%);
+  width:55px;
+  height:55px;
+  border-radius:50%;
+  background:#c9ad78;
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:24px;
+  box-shadow:0 4px 12px rgba(80,50,20,.2);
+  transition:.7s;
+}
+
+.letter{
+  position:absolute;
+  width:85%;
+  height:165px;
+  left:7.5%;
+  top:35px;
+  background:#fffaf2;
+  border:1px solid #ded0bb;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  z-index:2;
+  transition:1.3s;
+}
+
+.letter strong{
+  font-size:25px;
+  font-weight:normal;
+  color:#75604a;
+}
+
+.letter span{
+  font-size:12px;
+  letter-spacing:3px;
+  margin-top:10px;
+  color:#a58b6b;
+}
+
+.open-btn{
+  margin-top:28px;
+  border:1px solid #b9a17e;
+  background:transparent;
+  color:#806b53;
+  padding:13px 35px;
+  border-radius:30px;
+  letter-spacing:2px;
+  font-family:inherit;
+  cursor:pointer;
+}
+
+.opening.opened .flap{
+  transform:rotateX(180deg);
+}
+
+.opening.opened .seal{
+  opacity:0;
+  transform:translateX(-50%) scale(.5);
+}
+
+.opening.opened .letter{
+  transform:translateY(-120px);
+}
+
+.opening.opened{
+  min-height:0;
+  height:0;
+  opacity:0;
+  pointer-events:none;
+  transition:1.5s;
+}
+
+/* НЕГИЗГИ */
+
+main{
+  background:#f8f1e7;
+}
+
+section{
+  padding:75px 22px;
+  max-width:760px;
+  margin:auto;
+  position:relative;
 }
 
 .hero{
   min-height:100vh;
-  padding:55px 24px;
   display:flex;
-  align-items:center;
+  flex-direction:column;
   justify-content:center;
+  align-items:center;
   text-align:center;
-
-  background:
-  linear-gradient(
-    rgba(251,248,242,.78),
-    rgba(251,248,242,.88)
-  ),
-  url("photo1.jpg") center/cover;
+  padding-top:100px;
 }
 
-.frame{
-  width:100%;
-  border:1px solid #ad987f;
-  padding:55px 20px;
+.kicker{
+  font-size:12px;
+  letter-spacing:4px;
+  color:#a68e70;
+  margin-bottom:25px;
 }
 
-.small{
-  font-size:10px;
-  letter-spacing:3px;
-  text-transform:uppercase;
-  color:#988673;
-}
-
-h1,h2{
-  font-family:"Cormorant Garamond",serif;
-  font-weight:500;
-}
-
-.hero h1{
-  font-size:58px;
-  line-height:.95;
-  margin:22px 0;
-  color:#584c41;
+.names{
+  font-size:56px;
+  line-height:1.15;
+  font-weight:normal;
+  color:#665445;
 }
 
 .amp{
-  font-size:34px;
-  color:#a48b70;
+  font-size:35px;
+  color:#b79b71;
+  font-style:italic;
 }
 
 .date{
-  font-size:12px;
-  letter-spacing:2px;
-  margin-top:25px;
+  margin-top:28px;
+  letter-spacing:4px;
+  font-size:14px;
+  color:#8c765d;
+}
+
+.line{
+  width:90px;
+  height:1px;
+  background:#c6b291;
+  margin:25px auto;
+}
+
+.quote{
+  max-width:500px;
+  font-size:18px;
+  line-height:1.9;
+  color:#766657;
+  font-style:italic;
 }
 
 .scroll{
-  display:inline-block;
-  margin-top:40px;
-  padding:12px 20px;
-  border:1px solid #ad987f;
-  color:#6d5e50;
-  text-decoration:none;
-  font-size:10px;
-  letter-spacing:2px;
+  margin-top:55px;
+  font-size:11px;
+  letter-spacing:3px;
+  color:#aa9274;
 }
 
-.section{
-  padding:65px 25px;
+/* БӨЛҮМ */
+
+.center{
   text-align:center;
 }
 
-.section h2{
-  font-size:40px;
-  margin:10px 0 18px;
+.section-title{
+  font-size:30px;
+  font-weight:normal;
+  color:#675545;
+  margin-bottom:18px;
 }
 
-.divider{
-  width:55px;
-  height:1px;
-  background:#b9a28a;
-  margin:0 auto 22px;
+.section-sub{
+  color:#9a856d;
+  font-size:14px;
+  line-height:1.8;
 }
 
-.section p{
-  font-size:13px;
-  line-height:1.9;
-  max-width:480px;
-  margin:auto;
+/* КАЛЕНДАРЬ */
+
+.calendar{
+  max-width:330px;
+  margin:35px auto 0;
+  background:#fffaf3;
+  padding:25px;
+  border:1px solid #ded0bb;
+  box-shadow:0 12px 35px rgba(80,60,40,.08);
 }
 
-/* СҮРӨТТӨР БИРДЕН БИРДЕН ЫЛДЫЙ */
+.month{
+  text-align:center;
+  letter-spacing:4px;
+  color:#806a53;
+  margin-bottom:20px;
+}
+
+.week{
+  display:grid;
+  grid-template-columns:repeat(7,1fr);
+  gap:8px;
+  text-align:center;
+  font-size:12px;
+}
+
+.day{
+  padding:7px 0;
+}
+
+.day.head{
+  color:#ad9271;
+  font-size:10px;
+}
+
+.day.selected{
+  background:#bca177;
+  color:white;
+  border-radius:50%;
+}
+
+/* СҮРӨТ */
+
 .photo{
-  margin:0 16px 28px;
-  background:#eee6da;
+  margin:50px auto;
+  position:relative;
+  opacity:0;
+  transform:translateY(35px);
+  transition:1s;
+}
+
+.photo.show{
+  opacity:1;
+  transform:translateY(0);
 }
 
 .photo img{
   width:100%;
   display:block;
+  max-height:650px;
+  object-fit:cover;
+  border:8px solid #fffaf3;
+  box-shadow:0 15px 40px rgba(60,45,30,.16);
 }
 
-.caption{
-  padding:17px 12px 22px;
+.photo-caption{
   text-align:center;
-  font-family:"Cormorant Garamond",serif;
-  font-size:25px;
-  color:#66584c;
-}
-
-.wishes{
-  background:#f0e7dc;
-  padding:65px 25px;
-  text-align:center;
-}
-
-.wishes h2{
-  font-size:40px;
-  margin:10px 0 20px;
-}
-
-.wishes p{
-  font-family:"Cormorant Garamond",serif;
-  font-size:27px;
-  line-height:1.4;
-  margin:auto;
-  max-width:480px;
-}
-
-.info{
-  margin-top:28px;
-  padding:24px 15px;
-  border-top:1px solid #d2c1ad;
-  border-bottom:1px solid #d2c1ad;
-  line-height:1.8;
-}
-
-.info strong{
-  display:block;
-  font-weight:500;
-}
-
-.map{
-  display:inline-block;
-  margin-top:22px;
-  padding:13px 23px;
-  border:1px solid #9d8974;
-  color:#66584c;
-  text-decoration:none;
-  font-size:10px;
-  letter-spacing:2px;
-}
-
-.music{
-  position:fixed;
-  right:15px;
-  bottom:15px;
-  z-index:50;
-}
-
-.music button{
-  border:1px solid #9d8974;
-  background:rgba(251,248,242,.96);
-  color:#66584c;
-  border-radius:30px;
-  padding:12px 17px;
-  font-family:Montserrat,sans-serif;
-  font-size:10px;
+  margin-top:16px;
+  color:#8d775e;
+  font-size:14px;
   letter-spacing:1px;
 }
 
-.footer{
+/* МААЛЫМАТ */
+
+.info-card{
+  background:#fffaf3;
+  border:1px solid #ded0bb;
+  padding:35px 25px;
   text-align:center;
-  padding:45px 20px 75px;
-  font-family:"Cormorant Garamond",serif;
-  font-size:26px;
+  box-shadow:0 15px 40px rgba(70,50,30,.08);
+  margin-top:30px;
 }
 
-@media(max-width:430px){
+.info-icon{
+  font-size:32px;
+  margin-bottom:15px;
+}
 
-  .hero h1{
-    font-size:51px;
+.info-card h3{
+  font-weight:normal;
+  font-size:25px;
+  color:#685645;
+  margin-bottom:12px;
+}
+
+.info-card p{
+  line-height:1.8;
+  color:#89735d;
+}
+
+.map-btn{
+  display:inline-block;
+  margin-top:22px;
+  padding:13px 25px;
+  border:1px solid #b9a17e;
+  color:#806a52;
+  text-decoration:none;
+  border-radius:30px;
+  font-size:13px;
+  letter-spacing:1px;
+}
+
+/* МУЗЫКА */
+
+.music-btn{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  width:58px;
+  height:58px;
+  border-radius:50%;
+  border:1px solid #b99e76;
+  background:#fffaf3;
+  color:#8a7155;
+  box-shadow:0 8px 25px rgba(60,45,30,.2);
+  z-index:100;
+  cursor:pointer;
+  font-size:21px;
+}
+
+.music-btn.playing{
+  animation:spin 3s linear infinite;
+}
+
+@keyframes spin{
+  from{transform:rotate(0)}
+  to{transform:rotate(360deg)}
+}
+
+/* АЯГЫ */
+
+.footer{
+  text-align:center;
+  padding:80px 20px 100px;
+  background:#eee3d4;
+}
+
+.footer .names-small{
+  font-size:30px;
+  color:#675545;
+  margin-bottom:18px;
+}
+
+.footer p{
+  color:#927c64;
+  line-height:1.8;
+}
+
+.parents{
+  margin-top:30px;
+  font-size:13px;
+  letter-spacing:2px;
+  color:#9c856b;
+}
+
+@media(max-width:500px){
+  .names{
+    font-size:45px;
   }
 
-  .section h2,
-  .wishes h2{
-    font-size:36px;
+  .quote{
+    font-size:16px;
   }
 
+  section{
+    padding:65px 18px;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<div class="page">
+<!-- КОНВЕРТ -->
+
+<div class="opening" id="opening">
+
+  <div class="flower f1">❀</div>
+  <div class="flower f2">✿</div>
+  <div class="flower f3">❁</div>
+  <div class="flower f4">❀</div>
+
+  <div class="envelope-wrap">
+
+    <div class="small-title">
+      ҮЙЛӨНҮҮ ТОЮНА ЧАКЫРУУ
+    </div>
+
+    <div class="envelope" onclick="openInvitation()">
+
+      <div class="flap"></div>
+
+      <div class="letter">
+        <strong>Артур & Айсулуу</strong>
+        <span>СҮЙҮҮ МЕНЕН</span>
+      </div>
+
+      <div class="seal">♥</div>
+
+    </div>
+
+    <button class="open-btn" onclick="openInvitation()">
+      ЧАКЫРУУНУ АЧУУ
+    </button>
+
+  </div>
+</div>
+
+
+<main>
 
 <!-- БАШКЫ БӨЛҮК -->
+
 <section class="hero">
 
-  <div class="frame">
+  <div class="flower f1">❀</div>
+  <div class="flower f2">❁</div>
 
-    <div class="small">
-      Үйлөнүү тоюна чакыруу
-    </div>
+  <div class="kicker">
+    БИЗДИН ӨЗГӨЧӨ КҮНҮБҮЗ
+  </div>
 
-    <h1>
-      Артур
-      <span class="amp">&amp;</span>
-      Айсулуу
-    </h1>
+  <h1 class="names">
+    Артур<br>
+    <span class="amp">&</span><br>
+    Айсулуу
+  </h1>
 
-    <div class="divider"></div>
+  <div class="line"></div>
 
-    <div class="date">
-      14 ФЕВРАЛЬ 2026 · 17:00
-    </div>
+  <div class="date">
+    14 ФЕВРАЛЬ 2026<br>
+    17:00
+  </div>
 
-    <a class="scroll" href="#invitation">
-      ЧАКЫРУУНУ ОКУУ
-    </a>
+  <div class="line"></div>
 
+  <p class="quote">
+    «Сүйүү — эки жүрөктүн бир багытта согушу.
+    Бүгүн биз ошол жолдун жаңы барагын ачабыз.»
+  </p>
+
+  <div class="scroll">
+    ↓  БИЗ МЕНЕН БОЛУҢУЗ
   </div>
 
 </section>
 
 
 <!-- ЧАКЫРУУ -->
-<section class="section" id="invitation">
 
-  <div class="small">
-    Биздин өзгөчө күнүбүз
-  </div>
+<section class="center">
 
-  <h2>
+  <div class="kicker">УРМАТТУУ КОНУКТАР</div>
+
+  <h2 class="section-title">
     Сизди күтөбүз
   </h2>
 
-  <div class="divider"></div>
-
-  <p>
-    Жүрөгүбүзгө жакын адамдар менен бул өзгөчө
-    күндү бирге өткөрүп, кубанычыбызды бөлүшкүбүз
-    келет. Сиздин катышууңуз биздин майрамыбызды
-    дагы да өзгөчө кылат.
+  <p class="section-sub">
+    Жүрөгүбүзгө жакын адамдардын арасында
+    бул өзгөчө күндү чогуу өткөрүүнү каалайбыз.
+    Сиздин катышууңуз биз үчүн чоң кубаныч.
   </p>
 
 </section>
 
 
-<!-- 1-СҮРӨТ -->
-<div class="photo">
+<!-- ДАТА -->
 
-  <img src="photo1.jpg">
+<section class="center">
 
-  <div class="caption">
-    Эки жүрөк — бир жол.
-  </div>
+  <div class="kicker">КҮНҮ</div>
 
-</div>
-
-
-<!-- 2-СҮРӨТ -->
-<div class="photo">
-
-  <img src="photo2.jpg">
-
-  <div class="caption">
-    Бактылуу көз ирмемдер.
-  </div>
-
-</div>
-
-
-<!-- 3-СҮРӨТ -->
-<div class="photo">
-
-  <img src="photo3.jpg">
-
-  <div class="caption">
-    Сүйүү ар бир көз ирмемде.
-  </div>
-
-</div>
-
-
-<!-- 4-СҮРӨТ -->
-<div class="photo">
-
-  <img src="photo4.jpg">
-
-  <div class="caption">
-    Бирге башталган жаңы барак.
-  </div>
-
-</div>
-
-
-<!-- 5-СҮРӨТ -->
-<div class="photo">
-
-  <img src="photo5.jpg">
-
-  <div class="caption">
-    Жүрөктө түбөлүк калчу күн.
-  </div>
-
-</div>
-
-
-<!-- 6-СҮРӨТ -->
-<div class="photo">
-
-  <img src="photo6.jpg">
-
-  <div class="caption">
-    Биздин майрам — сиз менен өзгөчө.
-  </div>
-
-</div>
-
-
-<!-- ТИЛЕК -->
-<section class="wishes">
-
-  <div class="small">
-    Ак тилек
-  </div>
-
-  <h2>
-    Сүйүү менен
+  <h2 class="section-title">
+    14 Февраль 2026
   </h2>
 
-  <div class="divider"></div>
+  <div class="calendar">
 
-  <p>
-    «Ар бир таңыбыз жылуулукка,
-    ар бир күнүбүз кубанычка,
-    ал эми жүрөгүбүз сүйүүгө толсун».
-  </p>
+    <div class="month">
+      ФЕВРАЛЬ 2026
+    </div>
+
+    <div class="week">
+      <div class="day head">ДШ</div>
+      <div class="day head">ШШ</div>
+      <div class="day head">ШР</div>
+      <div class="day head">БШ</div>
+      <div class="day head">ЖМ</div>
+      <div class="day head">ИШ</div>
+      <div class="day head">ЖК</div>
+
+      <div class="day"> </div>
+      <div class="day"> </div>
+      <div class="day"> </div>
+      <div class="day"> </div>
+      <div class="day"> </div>
+      <div class="day"> </div>
+      <div class="day">1</div>
+
+      <div class="day">2</div>
+      <div class="day">3</div>
+      <div class="day">4</div>
+      <div class="day">5</div>
+      <div class="day">6</div>
+      <div class="day">7</div>
+      <div class="day">8</div>
+
+      <div class="day">9</div>
+      <div class="day">10</div>
+      <div class="day">11</div>
+      <div class="day">12</div>
+      <div class="day">13</div>
+      <div class="day selected">14</div>
+      <div class="day">15</div>
+
+      <div class="day">16</div>
+      <div class="day">17</div>
+      <div class="day">18</div>
+      <div class="day">19</div>
+      <div class="day">20</div>
+      <div class="day">21</div>
+      <div class="day">22</div>
+
+      <div class="day">23</div>
+      <div class="day">24</div>
+      <div class="day">25</div>
+      <div class="day">26</div>
+      <div class="day">27</div>
+      <div class="day">28</div>
+      <div class="day"> </div>
+    </div>
+
+  </div>
 
 </section>
 
 
-<!-- МЕСТОПОЛОЖЕНИЕ -->
-<section class="section">
+<!-- СҮРӨТ 1 -->
 
-  <div class="small">
-    Кайда жолугабыз?
+<section>
+
+  <div class="photo">
+    <img src="photo2.jpg" alt="Артур жана Айсулуу">
+    <div class="photo-caption">
+      Бирге башталган эң сонун жол...
+    </div>
   </div>
-
-  <h2>
-    Майрамдын дареги
-  </h2>
-
-  <div class="divider"></div>
-
-  <div class="info">
-
-    <strong>
-      «Каргат» рестораны
-    </strong>
-
-    Бишкек шаары<br>
-
-    14-февраль 2026 · 17:00
-
-  </div>
-
-  <a
-    class="map"
-    href="https://www.google.com/maps/search/?api=1&query=Каргат+ресторан+Бишкек"
-    target="_blank"
-  >
-    📍 МЕСТОПОЛОЖЕНИЕ
-  </a>
 
 </section>
 
 
-<div class="footer">
+<!-- СҮРӨТ 2 -->
 
-  Артур & Айсулуу
+<section>
 
-  <br><br>
+  <div class="photo">
+    <img src="photo3.jpg" alt="Артур жана Айсулуу">
+    <div class="photo-caption">
+      Эки жүрөк — бир кыял.
+    </div>
+  </div>
 
-  <span class="small">
-    Сүйүү · Үй-бүлө · Бакыт
-  </span>
-
-</div>
-
-</div>
-
-
-<!-- МУЗЫКА -->
-<div class="music">
-
-  <button id="musicBtn">
-    ♫ Музыка: OFF
-  </button>
-
-  <audio
-    id="music"
-    src="music.mp3"
-    preload="auto"
-  ></audio>
-
-</div>
+</section>
 
 
-<script>
+<!-- СҮРӨТ 3 -->
 
-const music =
-document.getElementById("music");
+<section>
 
-const button =
-document.getElementById("musicBtn");
+  <div class="photo">
+    <img src="photo4.jpg" alt="Артур жана Айсулуу">
+    <div class="photo-caption">
+      Бактылуу көз ирмемдер...
+    </div>
+  </div>
 
-
-/* МУЗЫКА 58 СЕКУНДА ГАНА */
-
-music.addEventListener("timeupdate", function(){
-
-  if(music.currentTime >= 58){
-
-    music.pause();
-
-    music.currentTime = 0;
-
-    button.textContent =
-      "♫ Музыка: OFF";
-
-  }
-
-});
+</section>
 
 
-button.addEventListener("click", async function(){
+<!-- СҮРӨТ 4 -->
 
-  if(music.paused){
+<section>
 
-    try{
-
-      music.currentTime = 0;
-
-      await music.play();
-
-      button.textContent =
-        "♫ Музыка: ON";
-
-    }
-
-    catch(error){
-
-      button.textContent =
-        "♫ Кайра бас";
-
-    }
-
-  }else{
-
-    music.pause();
-
-    button.textContent =
-      "♫ Музыка: OFF";
-
-  }
-
-});
-
-</script>
-
-</body>
-</html>
+  <div class="photo">
+    <img src="photo5.jpg" alt
